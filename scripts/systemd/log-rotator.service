@@ -1,0 +1,9 @@
+[Unit]
+Description=Enterprise Log Rotation and Cleanup Service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/rotate-logs.sh /var/log/custom-app 7
+StandardOutput=journal
+StandardError=journal
